@@ -2,16 +2,24 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import {
+  AdjustmentsIcon,
   BookmarkAltIcon,
   CalendarIcon,
   ChartBarIcon,
-  CursorClickIcon,
+  DesktopComputerIcon,
+  DeviceMobileIcon,
+  LightBulbIcon,
+  LightningBoltIcon,
   MenuIcon,
   PhoneIcon,
   PlayIcon,
+  PresentationChartBarIcon,
   RefreshIcon,
   ShieldCheckIcon,
+  SparklesIcon,
+  SpeakerphoneIcon,
   SupportIcon,
+  VideoCameraIcon,
   ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline'
@@ -19,29 +27,51 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 
 const services = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of where your traffic is coming from.',
+    name: 'Social Media Marketing',
+    // description: 'To increase your visibility and reputation in Social Media. Choose the offer that suits you the best and speak with a member of our team to start quickly and easily.',
+    description: 'To increase your visibility and reputation in Social Media .....',
     href: '#',
-    icon: ChartBarIcon,
+    icon: SpeakerphoneIcon,
   },
   {
-    name: 'Engagement',
+    name: 'SEO/SEA',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
-    icon: CursorClickIcon,
+    icon: AdjustmentsIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
   {
-    name: 'Integrations',
+    name: 'Advisory Services',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '#',
+    icon: PresentationChartBarIcon,
+  },
+  { name: 'UI/UX',
+    description: "Your customers' data will be safe and secure.",
+    href: '#',
+    icon: SparklesIcon },
+  {
+    name: 'Video Animation',
     description: "Connect with third-party tools that you're already using.",
     href: '#',
-    icon: ViewGridIcon,
+    icon: VideoCameraIcon,
   },
   {
-    name: 'Automations',
+    name: 'Social Media Design',
     description: 'Build strategic funnels that will drive your customers to convert',
     href: '#',
-    icon: RefreshIcon,
+    icon: LightningBoltIcon,
+  },
+  {
+    name: 'Build A Website',
+    description: 'Build strategic funnels that will drive your customers to convert',
+    href: '#',
+    icon: DesktopComputerIcon,
+  },
+  {
+    name: 'Build A Mobile Application',
+    description: 'Build strategic funnels that will drive your customers to convert',
+    href: '#',
+    icon: DeviceMobileIcon,
   },
 ]
 const callsToAction = [
@@ -130,9 +160,9 @@ export default function Navbar() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-2xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <Popover.Panel className="absolute z-10 -ml-4 mt-4 transform px-2 w-screen max-w-2xl lg:max-w-4xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/3">
                       <div className="rounded-lg shadow-lg  overflow-hidden">
-                        <div className="relative grid gap-6 grid-cols-2 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                        <div className="relative grid gap-6 lg:grid-cols-3 grid-cols-2 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {services.map((item) => (
                               <Link href={item.href} key={item.name}>
                                 <a
@@ -249,8 +279,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             
             <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-3 font-bold border border-transparent rounded-full shadow-sm text-base text-white bg-gradient-to-r from-indigo-700 to-indigo-500 hover:from-indigo-800 hover:to-indigo-600" 
+              href="mailto:mohamed@harbouli.com"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-3 font-bold border border-transparent rounded-full shadow-sm text-base text-white bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-800 hover:to-blue-600" 
             >
               GET IN TOUCH
             </a>
@@ -293,7 +323,7 @@ export default function Navbar() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
+                      <item.icon className="flex-shrink-0 h-6 w-6 text-blue-400" aria-hidden="true" />
                       <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                     </a>
                   ))}
@@ -324,14 +354,9 @@ export default function Navbar() {
                   href="#"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
-                  Sign up
+                  GET IN TOUCH
                 </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
-                </p>
+                
               </div>
             </div>
           </div>
