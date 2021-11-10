@@ -5,22 +5,18 @@ import {
   AdjustmentsIcon,
   BookmarkAltIcon,
   CalendarIcon,
-  ChartBarIcon,
   DesktopComputerIcon,
   DeviceMobileIcon,
-  LightBulbIcon,
   LightningBoltIcon,
   MenuIcon,
   PhoneIcon,
   PlayIcon,
   PresentationChartBarIcon,
-  RefreshIcon,
   ShieldCheckIcon,
   SparklesIcon,
   SpeakerphoneIcon,
   SupportIcon,
   VideoCameraIcon,
-  ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
@@ -160,7 +156,7 @@ export default function Navbar() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 -ml-4 mt-4 transform px-2 w-screen max-w-2xl lg:max-w-4xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/3">
+                    <Popover.Panel className="absolute z-50 -ml-4 mt-4 transform px-2 w-screen max-w-2xl lg:max-w-4xl sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/3">
                       <div className="rounded-lg shadow-lg  overflow-hidden">
                         <div className="relative grid gap-6 lg:grid-cols-3 grid-cols-2 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {services.map((item) => (
@@ -196,10 +192,11 @@ export default function Navbar() {
                 </>
               )}
             </Popover>
-
-            <a href="#" className=" activee  relative text-base font-medium  text-gray-500 hover:text-gray-900">
-            Projects
-            </a>
+            <Link href="./projects">
+              <a  className=" activee  relative text-base font-medium  text-gray-500 hover:text-gray-900">
+              Projects
+              </a>
+            </Link>
             <a href="#" className="text-base activee  relative font-medium text-gray-500 hover:text-gray-900">
               Blog
             </a>
@@ -297,7 +294,7 @@ export default function Navbar() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <Popover.Panel focus className="absolute z-40 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
