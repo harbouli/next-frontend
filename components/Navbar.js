@@ -111,15 +111,16 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-              
-            <a href="#">
-              <span className="sr-only">Workflow</span>
+              <Link href="/">
+            <a >
+              <span className="sr-only">LogoBrand</span>
               <img
                 className="h-8 w-auto sm:h-10"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                 alt=""
               />
             </a>
+            </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
@@ -176,13 +177,15 @@ export default function Navbar() {
                         <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                           {callsToAction.map((item) => (
                             <div key={item.name} className="flow-root">
+                              <Link  href={item.href}>
                               <a
-                                href={item.href}
+                               
                                 className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
                               >
                                 <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
                                 <span className="ml-3">{item.name}</span>
                               </a>
+                              </Link>
                             </div>
                           ))}
                         </div>
@@ -197,10 +200,12 @@ export default function Navbar() {
               Projects
               </a>
             </Link>
-            <a href="#" className="text-base activee  relative font-medium text-gray-500 hover:text-gray-900">
-              Blog
-            </a>
+            <Link  href="/Blog">
 
+              <a className="text-base activee  relative font-medium text-gray-500 hover:text-gray-900">
+                Blog
+              </a>
+            </Link>
             <Popover className="relative">
               {({ open }) => (
                 <>
@@ -233,9 +238,11 @@ export default function Navbar() {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid grid-cols-2 gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
+                            <Link
+                            key={item.name}
+                            href={item.href}>
                             <a
-                              key={item.name}
-                              href={item.href}
+                              
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
                               <item.icon className="flex-shrink-0 h-6 w-6 text-blue-400" aria-hidden="true" />
@@ -244,6 +251,7 @@ export default function Navbar() {
                                 <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                               </div>
                             </a>
+                            </Link>
                           ))}
                         </div>
                         <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
@@ -252,18 +260,22 @@ export default function Navbar() {
                             <ul role="list" className="mt-4 space-y-4">
                               {recentPosts.map((post) => (
                                 <li key={post.id} className="text-base truncate">
-                                  <a href={post.href} className="font-medium text-gray-900 hover:text-gray-700">
+                                  <Link href={post.href}>
+                                  <a  className="font-medium text-gray-900 hover:text-gray-700">
                                     {post.name}
                                   </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="mt-5 text-sm">
-                            <a href="#" className="font-medium text-blue-400 hover:text-blue-300">
+                            <Link href="#">
+                            <a  className="font-medium text-blue-400 hover:text-blue-300">
                               {' '}
                               View all posts <span aria-hidden="true">&rarr;</span>
                             </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -315,40 +327,50 @@ export default function Navbar() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {services.map((item) => (
+                    <Link
+                    key={item.name}
+                    href={item.href}>
                     <a
-                      key={item.name}
-                      href={item.href}
+                     
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
                       <item.icon className="flex-shrink-0 h-6 w-6 text-blue-400" aria-hidden="true" />
                       <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                     </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link href="/projects" >
+                <a className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Projects
                 </a>
-
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                </Link>
+                <Link href="/Blog">
+                <a  className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Blog
                 </a>
+                </Link>
                 {resources.map((item) => (
+                  <Link
+                  key={item.name}
+                  href={item.href}
+                  >
+                 
                   <a
-                    key={item.name}
-                    href={item.href}
                     className="text-base font-medium text-gray-900 hover:text-gray-700"
                   >
                     {item.name}
                   </a>
+                  </Link>
                 ))}
               </div>
               <div>
                 <a
-                  href="#"
+                  href="mailto:mohamed@harbouli.com"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   GET IN TOUCH

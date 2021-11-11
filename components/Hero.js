@@ -14,7 +14,7 @@ export default function Hero() {
                   </p>
             </div>
             <div  className="mt-10">
-              <Link href="/contact">
+              <Link href="/Contact">
                 <a className="text-lg bg-blue-600 hover:bg-blue-500 text-white py-6 px-16 ">Let's Talk</a>
               </Link>
             </div>
