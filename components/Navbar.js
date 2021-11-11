@@ -192,7 +192,7 @@ export default function Navbar() {
                 </>
               )}
             </Popover>
-            <Link href="./projects">
+            <Link href="/projects">
               <a  className=" activee  relative text-base font-medium  text-gray-500 hover:text-gray-900">
               Projects
               </a>

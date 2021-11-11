@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-
       <div className=" my-12 lg:my-16 z-0 lg:max-w-6xl mx-auto grid   lg:grid-cols-3 gap-3">
            <div className="font-bold text-4xl lg:text-5xl leading-12 text-center my-9 lg:mb-0 lg:text-left">
                IMPROVE <br/> <span className="linehero relative z-0">YOUR WORK</span> EFFICIENCY
