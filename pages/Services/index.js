@@ -1,7 +1,6 @@
 import CardServices from "../../components/ServicesComponent/CardServices";
 
 export default function Services ({services}){
-    console.log(services)
     return (
         <div >
             <div className="w-full bg-indigo-700 py-32">
