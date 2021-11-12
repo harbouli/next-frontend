@@ -1,5 +1,6 @@
-import Services from '../components/Services'
+import Services from '../components/AllServices'
 import Hero from '../components/Hero'
+import About from '../components/About'
 
 
 
@@ -8,22 +9,15 @@ export default function Home({services}) {
 
   return (
     <div>
-      {
-        services.map(service =>{
-          return
-          <div>
-            {service.Service_Titel}
-          </div>
-        })
-      }
       <Hero/>
+      <About/>
       <Services service={services} />
     </div>
   )
 }
 
 
- export async function getServerSideProps () {
+ export async function getStaticProps () {
    const {API_URL} = process.env
    const res = await fetch(`${API_URL}/services`)
    const data = await res.json()
@@ -31,5 +25,6 @@ export default function Home({services}) {
        props: { 
           services: data
        }, 
+       revalidate: 3600,
      }
  }

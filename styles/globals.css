@@ -78,6 +78,20 @@
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
+.active::before{
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 99px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background-color: rgba(59, 130, 246, 0.5);
+    -webkit-border-radius: 99px;
+    -moz-border-radius: 99px;
+    -ms-border-radius: 99px;
+    -o-border-radius: 99px;
+}
 .linehero::before{
   content: '';
   position: absolute;

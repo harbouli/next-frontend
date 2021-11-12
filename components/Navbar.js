@@ -19,6 +19,7 @@ import {
   VideoCameraIcon,
   XIcon,
 } from '@heroicons/react/outline'
+import { useRouter } from 'next/dist/client/router'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 const services = [
@@ -71,7 +72,7 @@ const services = [
   },
 ]
 const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
+  { name: 'All Services', href: '/Services', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ]
 const resources = [
@@ -106,6 +107,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const router = useRouter()
+  
   return (
     <Popover className="relative  bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -195,15 +198,17 @@ export default function Navbar() {
                 </>
               )}
             </Popover>
-            <Link href="/projects">
-              <a  className=" activee  relative text-base font-medium  text-gray-500 hover:text-gray-900">
-              Projects
+            <Link href="/projects" >
+              <a  className="   relative text-base font-medium   hover:text-gray-900">
+              <div className={router.pathname === '/projects' ? 'active text-gray-900' : 'activee text-gray-500'}>Projects</div>
               </a>
             </Link>
             <Link  href="/Blog">
 
-              <a className="text-base activee  relative font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base  relative font-medium text-gray-500 hover:text-gray-900">
+              <div className={router.pathname === '/Blog' ? 'active text-gray-900' : 'activee text-gray-500'}>
                 Blog
+              </div>
               </a>
             </Link>
             <Popover className="relative">
