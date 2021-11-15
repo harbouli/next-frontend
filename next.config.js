@@ -11,9 +11,9 @@ module.exports = {
   //   API_IMG: process.env.API_IMG
   // },
  
-  // images: {
-  //   domains: [process.env.API_IMG],
-
-  // },
+  images: {
+    loader: 'cloudinary',
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
   reactStrictMode: true,
 }

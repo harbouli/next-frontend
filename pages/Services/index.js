@@ -1,4 +1,5 @@
 import CardServices from "../../components/ServicesComponent/CardServices";
+import  fetchAPI from "../../lib/api"
 
 export default function Services ({services}){
     return (
@@ -15,12 +16,10 @@ export default function Services ({services}){
 }
 
 export async function getStaticProps () {
-    const {API_URL} = process.env
-    const res = await fetch(`${API_URL}/services`)
-    const data = await res.json()
+    const servicesData = fetchAPI('/services')
     return {
         props: { 
-           services: data
+           services: servicesData
         }, 
         revalidate: 3600,
       }
