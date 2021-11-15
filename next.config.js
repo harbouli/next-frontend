@@ -12,8 +12,9 @@ module.exports = {
   // },
  
   images: {
-    loader: 'cloudinary',
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [320, 420, 768, 1024, 1200],
+    loader: "default",
+    domains: ["res.cloudinary.com"],
   },
   reactStrictMode: true,
 }

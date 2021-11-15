@@ -104,5 +104,13 @@
 .blackW{
   -webkit-filter: grayscale(80%);
   filter: grayscale(80%);
-  z-index: 0;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.blackW:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }

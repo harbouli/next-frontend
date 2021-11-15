@@ -2,16 +2,15 @@ import Services from '../components/AllServices'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Head from 'next/head'
-import { fetchAPI } from '../lib/api'
+import Slider from '../components/ServicesComponent/Slider'
 
 
 
-export default function Home({home}) {
-
+export default function Home({home,services}) {
+  console.log(services)
   return (
     <>
       <Head>
-      <meta charset="UTF-8" />
       <title>{home.Seo.Title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={home.Seo.keywords}/>
@@ -20,20 +19,41 @@ export default function Home({home}) {
         <meta property="og:url" content="https://www.exampel.com/" />
         <meta property="og:image" content={home.Seo.open_graph_image.url} />
       </Head>
-      <Hero/>
+      <Hero home={home}/>
       <About/>
-      <Services service={services} />
+      <Services services={services} />
+      <Slider services={services}/>
     </>
   )
 }
 
 
  export async function getStaticProps () {
-   const homeAPI =  fetchAPI('home')
-   return {
+
+  const {API_URL} = process.env
+  const [HomeRes, ServicesRes] = await Promise.all([
+    fetch(`${API_URL}/home`), 
+    fetch(`${API_URL}/services`)
+  ]);
+
+
+  const [Home, Services] = await Promise.all([
+    HomeRes.json(), 
+    ServicesRes.json()
+  ]);
+
+
+
+  // const res = await fetch(`${API_URL}/home`)
+  // const data = await res.json()
+  // const ServcesRes = await fetch(`${API_URL}/services`)
+  // const dataTwo = await ServcesRes.json()
+ 
+  return {
        props: { 
-          home: homeAPI
+          home: Home,
+          services: Services
        }, 
-       revalidate: 3600,
+       revalidate: 36,
      }
  }
