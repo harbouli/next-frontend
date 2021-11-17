@@ -7,7 +7,6 @@ import Slider from '../components/ServicesComponent/Slider'
 
 
 export default function Home({home,services}) {
-  console.log(services)
   return (
     <>
       <Head>
@@ -22,7 +21,7 @@ export default function Home({home,services}) {
       <Hero home={home}/>
       <About/>
       <Services services={services} />
-      <Slider services={services}/>
+      
     </>
   )
 }

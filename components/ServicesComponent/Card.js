@@ -6,12 +6,12 @@ export default function Card(props){
     return(
             <Link href="#">
             <a>
-                <div className="max-w-sm rounded overflow-hidden shadow-2xl">
+                <div className="lg:max-w-sm rounded-xl lg:flex-col w-11/12 sm:w-11/12 mb-16 mx-auto flex overflow-hidden shadow-2xl">
                 <Image
                 src={ props.services.Image.url}
                 height={300}
                 width={500}
-                className="blackW"
+                className="blackW w"
                 alt={props.services.Description_IMG}
                 />
                 <div className="px-6 py-4">
