@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Card(props){
     const {API_URL} = process.env
     return(
-            <Link href="#">
+            <Link href={`/Services/[slug]`} as={`Services/${props.services.slug}`}>
             <a>
                 <div className="lg:max-w-sm rounded-xl lg:flex-col w-11/12 sm:w-11/12 mb-16 mx-auto flex overflow-hidden shadow-2xl">
                 <Image

@@ -41,13 +41,6 @@ export default function Home({home,services}) {
     ServicesRes.json()
   ]);
 
-
-
-  // const res = await fetch(`${API_URL}/home`)
-  // const data = await res.json()
-  // const ServcesRes = await fetch(`${API_URL}/services`)
-  // const dataTwo = await ServcesRes.json()
- 
   return {
        props: { 
           home: Home,

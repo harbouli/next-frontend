@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image'
 import 'swiper/css';
+import Link from 'next/link'
 
 
 
@@ -9,7 +10,7 @@ export default function Slider(props) {
 return(
   <>
      <Swiper
-        spaceBetween={5}
+        spaceBetween={0}
         slidesPerView={3}
     > 
    
@@ -17,11 +18,16 @@ return(
       props?.services.slice(0, 5).map((s)=>{
         return (
             <SwiperSlide key={s.id}>
-              <Image 
-              src={s.Image.url}
-              height={500}
-              width={520}
-              />
+              <Link href={`/Services/[slug]`} as={`Services/${s.slug}`} >
+                <a
+                className="w-full h-full bg-gray-500">
+                  <Image 
+                  src={s.Image.url}
+                  height={500}
+                  width={520}
+                  />
+                </a>
+              </Link>
             </SwiperSlide>
         )
       })
